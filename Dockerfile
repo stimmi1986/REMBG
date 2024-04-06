@@ -3,7 +3,7 @@ FROM python:3.12-slim
 # download this https://github.com/danielgatis/rembg/releases/download/v0.0.0/u2net.onnx
 # copy model to avoid unnecessary download
 
-RUN curl -L -o u2net.onnx https://github.com/danielgatis/rembg/releases/download/v0.0.0/u2net.onnx
+RUN curl https://github.com/danielgatis/rembg/releases/download/v0.0.0/u2net.onnx
 
 COPY requirements.txt .
 
