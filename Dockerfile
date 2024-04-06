@@ -2,13 +2,9 @@ FROM python:3.12-slim
 
 # download this https://github.com/danielgatis/rembg/releases/download/v0.0.0/u2net.onnx
 # copy model to avoid unnecessary download
-RUN mkdir -p /app
+RUN apt-get update && apt-get install -y wget
 
-RUN wget https://github.com/danielgatis/rembg/releases/download/v0.0.0/u2net.onnx -O /app/u2net.onnx
-
-WORKDIR /app
-
-RUN pip install --upgrade pip
+RUN wget https://github.com/danielgatis/rembg/releases/download/v0.0.0/u2net.onnx
 
 COPY requirements.txt .
 
